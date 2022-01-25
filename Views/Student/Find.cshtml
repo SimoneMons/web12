@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication12.Models.Student.StudentData>
+
+@{
+    ViewBag.Title = "Find";
+}
+
+<h2>Find Student by name (Mons)</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateStudent")
+</p>
+
+<img src="~/Images/cappuccino.png">
+
+
+
+@using (Html.BeginForm())
+{
+<p>
+    <table class="table">
+        <tr>
+            <th>
+                Age: @Html.DropDownList("CompanyId", (SelectList)ViewBag.CompanyId, "Select Company", new { @class = "form-control" })
+            </th>
+
+            <th>
+                Name: @Html.TextBox("SearchString", null, null, new { @class = "form-control" })
+            </th>
+            <th>
+                <br>
+                <input type="submit" value="Search" />
+            </th>
+        </tr>
+    </table>
+</p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditStudent", new { id = item.StudentId }) |
+                @Html.ActionLink("Details", "StudentDetail", new { id = item.StudentId }) |
+                @Html.ActionLink("Delete", "DeleteStudent", new { id = item.StudentId })
+            </td>
+        </tr>
+    }
+
+</table>
