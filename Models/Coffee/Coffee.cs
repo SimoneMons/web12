@@ -46,6 +46,8 @@ namespace WebApplication12.Models.Coffee
         [DataType(DataType.Html)]
         public string Caption { get; set; }
 
+        public string imagePath { get; set; }
+
         [DataType(DataType.Upload)]
         public HttpPostedFileBase ImageUpload { get; set; }
     }

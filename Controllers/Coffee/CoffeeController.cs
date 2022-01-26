@@ -25,14 +25,19 @@ namespace WebApplication12.Controllers.Coffee
             if (ModelState.IsValid)
             {
                 var path = Path.Combine(Server.MapPath("~/Images"));
-                eventmodel.ImageUpload.SaveAs("C:/Proyectos/phtree_test/WebApplication12/Images/aaaa.png");
+                eventmodel.ImageUpload.SaveAs("C:/Proyectos/phtree_test/WebApplication12/Images/bbbb1.png");
 
-                
-                return RedirectToAction("Create");
+                eventmodel.imagePath = "~/Images/bbbb1.png";
+
+                return RedirectToAction("ViewCoffee", eventmodel);
             }
             return View(eventmodel);
         }
 
 
+        public ActionResult ViewCoffee(CoffeeViewModel eventmodel)
+        {
+            return View(eventmodel);
+        }
     }
 }

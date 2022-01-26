@@ -229,6 +229,7 @@
     <Content Include="Views\ImageProcessing\IndexImagesProcessing.cshtml" />
     <Content Include="Views\ImageProcessing\IndexImagesProcessingView.cshtml" />
     <Content Include="Views\Coffee\Create.cshtml" />
+    <Content Include="Views\Coffee\ViewCoffee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

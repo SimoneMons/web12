@@ -1,0 +1,21 @@
+﻿@model WebApplication12.Models.Coffee.CoffeeViewModel
+
+@{
+    ViewBag.Title = "ViewCoffee";
+}
+
+<h2>ViewCoffee del MOns</h2>
+
+<img src="@Url.Content(Model.imagePath)" alt="Image" />
+
+
+<img src="~/Images/aaaa.png" alt="Sample Image" width="300px" />
+
+
+<div>
+    @Html.LabelFor(m => m.Title)
+    @Html.DisplayNameFor(m => m.Title)
+    @Html.DisplayFor(m => m.Title)
+    @Html.DisplayFor(m => m.imagePath)
+</div>
+
